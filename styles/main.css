@@ -1,0 +1,51 @@
+.h-center {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.clear{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.item {
+    margin: 0px;
+    padding: 10px;
+    border: 0px;
+    display: grid;
+    background-color:cornflowerblue;
+}
+.item h1{
+    margin: 0px;
+    position: relative;
+}
+
+#screen {
+    width: 80%;
+    height: 1000px;
+    margin: 0px;
+    padding: 2%;
+    border: 0px;
+    gap: 2%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #B9D9EB;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: aquamarine;
+}
+
+body{
+    margin: 0px;
+    background-color: black;
+}

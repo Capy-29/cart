@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Sword",
+        "price": 10
+    },
+    {
+        "name": "Bow",
+        "price": 15
+    },
+    {
+        "name": "Random Capybara",
+        "price": 9999
+    },
+    {
+        "name": "Netherite Hoe",
+        "price": 100
+    },
+    {
+        "name": "Firework Star",
+        "price": 5
+    },
+    {
+        "name": "Leather Cap",
+        "price": 10
+    },
+    {
+        "name": "Sweet Berries",
+        "price": 2
+    },
+    {
+        "name": "Arrow(16)",
+        "price": 5
+    },
+    {
+        "name": "Turtle Shell",
+        "price": 50
+    },
+    {
+        "name": "Empty Map",
+        "price": 15
+    },
+    {
+        "name": "Lime Dye(16)",
+        "price": 4
+    },
+    {
+        "name": "Orange Dye(16)",
+        "price": 4
+    },
+    {
+        "name": "Gray Dye(16)",
+        "price": 4
+    },
+    {
+        "name": "Phantom Membrane",
+        "price": 10
+    },
+    {
+        "name": "Shield",
+        "price": 5
+    },
+    {
+        "name": "Bone(16)",
+        "price": 10
+    },
+    {
+        "name": "Name Tag",
+        "price": 5
+    },
+    {
+        "name": "Trident",
+        "price": 50
+    },
+    {
+        "name": "Book and Quill",
+        "price": 5
+    },
+    {
+        "name": "Wooden Pickaxe",
+        "price": 5
+    }
+]
