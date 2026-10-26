@@ -1,82 +1,102 @@
 [
     {
         "name": "Sword",
-        "price": 10
+        "price": 10,
+        "index": 0
     },
     {
         "name": "Bow",
-        "price": 15
+        "price": 15,
+        "index": 1
     },
     {
         "name": "Random Capybara",
-        "price": 9999
+        "price": 9999,
+        "index": 2
     },
     {
         "name": "Netherite Hoe",
-        "price": 100
+        "price": 100,
+        "index": 3
     },
     {
         "name": "Firework Star",
-        "price": 5
+        "price": 5,
+        "index": 4
     },
     {
         "name": "Leather Cap",
-        "price": 10
+        "price": 10,
+        "index": 5
     },
     {
         "name": "Sweet Berries",
-        "price": 2
+        "price": 2,
+        "index": 6
     },
     {
         "name": "Arrow(16)",
-        "price": 5
+        "price": 5,
+        "index": 7
     },
     {
         "name": "Turtle Shell",
-        "price": 50
+        "price": 50,
+        "index": 8
     },
     {
         "name": "Empty Map",
-        "price": 15
+        "price": 15,
+        "index": 9
     },
     {
         "name": "Lime Dye(16)",
-        "price": 4
+        "price": 4,
+        "index": 10
     },
     {
         "name": "Orange Dye(16)",
-        "price": 4
+        "price": 4,
+        "index": 11
     },
     {
         "name": "Gray Dye(16)",
-        "price": 4
+        "price": 4,
+        "index": 12
     },
     {
         "name": "Phantom Membrane",
-        "price": 10
+        "price": 10,
+        "index": 13
     },
     {
         "name": "Shield",
-        "price": 5
+        "price": 5,
+        "index": 14
     },
     {
         "name": "Bone(16)",
-        "price": 10
+        "price": 10,
+        "index": 15
     },
     {
         "name": "Name Tag",
-        "price": 5
+        "price": 5,
+        "index": 16
     },
     {
         "name": "Trident",
-        "price": 50
+        "price": 50,
+        "index": 17
     },
     {
         "name": "Book and Quill",
-        "price": 5
+        "price": 5,
+        "index": 18
     },
     {
         "name": "Wooden Pickaxe",
-        "price": 5
+        "price": 5,
+        "index": 19
     }
 ]
