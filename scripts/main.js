@@ -25,6 +25,17 @@ function filter(arr, category, value){
     return res;
 }
 
+function toogleCart(){
+    cartElement = document.getElementById("cart");
+    if(cartElement.style.display === "block"){
+        cartElement.style.display = "none";
+    }
+    else{
+        cartElement.style.display = "block";
+    }
+}
+
+
 const cart = new Cart();
 
 async function get(url) {
@@ -44,7 +55,7 @@ const response = get("/data?name=catalog.json").then((value) => {
     </div>
     <h1>${item["name"]}</h1>
     <p>${item["price"]}</p>
-    <button onclick="cart.add(${item["id"]}); console.log(cart.content);">Add to cart</button>
+    <button onclick="cart.add(${item["index"]}); console.log(cart.content);">Add to cart</button>
 </div>
 `
         const element = template.content.firstElementChild;

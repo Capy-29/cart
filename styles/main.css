@@ -6,6 +6,14 @@
     justify-content: center;
 }
 
+.h-right {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: flex;
+    justify-content: right;
+}
+
 .clear{
     margin: 0px;
     padding: 0px;
@@ -48,9 +56,10 @@
     padding: 2%;
     border: 0px;
     gap: 2%;
+    height: auto;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: #B9D9EB;
 }
 
 header {
@@ -59,10 +68,29 @@ header {
     margin: 0px;
     padding: 0px;
     border: 0px;
+    display: flex;
+    justify-content: right;
     background-color: aquamarine;
 }
 
 body{
     margin: 0px;
-    background-color: black;
+    overflow-y: scroll;
+    background-color: #B9D9EB;
+}
+
+#cart{
+    min-height: 100px;
+    z-index: 1;
+    position: absolute;
+}
+
+#cart *{
+    min-height: 100px;
+}
+
+#cart #card{
+    width: 100px;
+    height: 100px;
+    background-color: white;
 }
