@@ -79,9 +79,15 @@ body{
     background-color: #B9D9EB;
 }
 
+body *{
+    font-family: 'Standard Galactic Alphabet Hand', sans-serif;
+}
+
 #cart{
     min-height: 100px;
     z-index: 1;
+    display: none;
+    justify-content: left;
     position: absolute;
 }
 
@@ -90,7 +96,7 @@ body{
 }
 
 #cart #card{
-    width: 100px;
-    height: 100px;
+    width: 500px;
+    min-height: 100px;
     background-color: white;
 }
