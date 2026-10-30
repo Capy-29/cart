@@ -8,6 +8,20 @@ class Cart{
             cart.content[itemId] = 0;
         }
         cart.content[itemId] += 1;
+
+        const cartList = document.getElementById("cart-list");
+        while (cartList.firstChild) {
+            cartList.removeChild(cartList.firstChild);
+        }
+
+        let price = 0;
+        for(const [id, n] of Object.entries(this.content)){
+            const name = catalog[id]["name"];
+            const li = document.createElement("li");
+            const text = document.createTextNode(`${name} - ${n}`);
+            li.appendChild(text);
+            cartList.appendChild(li);
+        }
     }
 
     remove(itemId){
@@ -43,9 +57,11 @@ async function get(url) {
     return await response.json();
 }
 
+var catalog;
 const response = get("/data?name=catalog.json").then((value) => {
+    catalog = value;
     const screen = document.getElementById("screen");
-    for(const item of value){
+    for(const item of catalog){
         const template = document.createElement("template");
         template.innerHTML = 
 `

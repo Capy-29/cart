@@ -84,19 +84,14 @@ body *{
 }
 
 #cart{
-    min-height: 100px;
+    width: 500px;
     z-index: 1;
     display: none;
     justify-content: left;
+    background-color: white;
     position: absolute;
 }
 
 #cart *{
-    min-height: 100px;
-}
-
-#cart #card{
-    width: 500px;
-    min-height: 100px;
-    background-color: white;
+    font-size: 2rem;
 }

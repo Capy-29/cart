@@ -2,6 +2,7 @@ const http = require('http');
 const url = require('url');
 const fs = require("fs");
 const path = require("path");
+const { hostname } = require('os');
 
 function listener(req, res){
     const parsedUrl = url.parse(req.url, true);
