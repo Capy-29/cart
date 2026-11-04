@@ -14,18 +14,27 @@ class Cart{
             cartList.removeChild(cartList.firstChild);
         }
 
-        let price = 0;
         for(const [id, n] of Object.entries(this.content)){
             const name = catalog[id]["name"];
             const li = document.createElement("li");
-            const text = document.createTextNode(`${name} - ${n}`);
+            const text = document.createTextNode(`${name}: ${n}`);
             li.appendChild(text);
             cartList.appendChild(li);
         }
+        document.getElementById("total").textContent = `total: ${this.totalPrice()}`;
     }
 
     remove(itemId){
         cart.content[itemId] -= 1;
+    }
+
+    totalPrice(){
+        let total = 0;
+        for(const [id, n] of Object.entries(this.content)){
+            const price = catalog[id]["price"];
+            total += price * n;
+        }
+        return total;
     }
 }
 

@@ -79,7 +79,7 @@ body{
     background-color: #B9D9EB;
 }
 
-body *{
+*{
     font-family: 'Standard Galactic Alphabet Hand', sans-serif;
 }
 
@@ -94,4 +94,29 @@ body *{
 
 #cart *{
     font-size: 2rem;
+}
+
+@media(max-width: 1100px) {
+    #screen{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 800px) {
+    #screen{
+        grid-template-columns: 1fr;
+    }
+}
+
+#rick {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+@media(width: 676px) {
+    #rick{
+        display: block;
+    }
 }
