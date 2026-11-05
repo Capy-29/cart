@@ -115,7 +115,7 @@ body{
     width: 100vw;
 }
 
-@media(width: 676px) {
+@media(max-width: 767px) and (min-width: 676px) {
     #rick{
         display: block;
     }

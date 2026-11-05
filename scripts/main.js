@@ -3,12 +3,7 @@ class Cart{
         this.content = {};
     }
 
-    add(itemId){
-        if(!cart.content[itemId]){
-            cart.content[itemId] = 0;
-        }
-        cart.content[itemId] += 1;
-
+    update(){
         const cartList = document.getElementById("cart-list");
         while (cartList.firstChild) {
             cartList.removeChild(cartList.firstChild);
@@ -19,13 +14,30 @@ class Cart{
             const li = document.createElement("li");
             const text = document.createTextNode(`${name}: ${n}`);
             li.appendChild(text);
+            const removeButton = document.createElement("button");
+            removeButton.onclick="cart.remove();";
+            li.append(removeButton);
             cartList.appendChild(li);
         }
         document.getElementById("total").textContent = `total: ${this.totalPrice()}`;
     }
 
+    add(itemId){
+        if(!cart.content[itemId]){
+            cart.content[itemId] = 0;
+        }
+        cart.content[itemId] += 1;
+
+        this.update();
+    }
+
     remove(itemId){
+        if(!cart.content[itemId]){
+            cart.content[itemId] = 0;
+        }
         cart.content[itemId] -= 1;
+
+        this.update();
     }
 
     totalPrice(){
@@ -71,8 +83,7 @@ const response = get("/data?name=catalog.json").then((value) => {
     catalog = value;
     const screen = document.getElementById("screen");
     for(const item of catalog){
-        const template = document.createElement("template");
-        template.innerHTML = 
+        screen.insertAdjacentHTML("beforeend",
 `
 <div class = "item";>
     <div class="image_container">
@@ -82,8 +93,6 @@ const response = get("/data?name=catalog.json").then((value) => {
     <p>${item["price"]}</p>
     <button onclick="cart.add(${item["index"]}); console.log(cart.content);">Add to cart</button>
 </div>
-`
-        const element = template.content.firstElementChild;
-        screen.append(element);
+`);
     }
 })
