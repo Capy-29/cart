@@ -10,32 +10,42 @@ class Cart{
         }
 
         for(const [id, n] of Object.entries(this.content)){
-            const name = catalog[id]["name"];
-            const li = document.createElement("li");
-            const text = document.createTextNode(`${name}: ${n}`);
-            li.appendChild(text);
-            const removeButton = document.createElement("button");
-            removeButton.onclick="cart.remove();";
-            li.append(removeButton);
-            cartList.appendChild(li);
+            if(n){
+                const name = catalog[id]["name"];
+                
+                const li = document.createElement("li");
+
+                const p = document.createElement("p");
+                p.textContent = `${name}: ${n}`;
+                li.appendChild(p);
+
+                const removeButton = document.createElement("button");
+                removeButton.setAttribute("class", "cart__ul__li__button");
+                removeButton.addEventListener("click", event => {
+                    this.remove(id);
+                });
+
+                li.append(removeButton);
+                cartList.appendChild(li);
+            }
         }
         document.getElementById("total").textContent = `total: ${this.totalPrice()}`;
     }
 
     add(itemId){
-        if(!cart.content[itemId]){
-            cart.content[itemId] = 0;
+        if(!this.content[itemId]){
+            this.content[itemId] = 0;
         }
-        cart.content[itemId] += 1;
+        this.content[itemId] += 1;
 
         this.update();
     }
 
     remove(itemId){
-        if(!cart.content[itemId]){
-            cart.content[itemId] = 0;
+        if(!this.content[itemId]){
+            this.content[itemId] = 0;
         }
-        cart.content[itemId] -= 1;
+        this.content[itemId] -= 1;
 
         this.update();
     }

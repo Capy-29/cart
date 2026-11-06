@@ -1,6 +1,15 @@
-const fs = require("fs");
-const path = require("path");
+item = {
+    "name": "Big Capybara",
+    "price": 10
+}
 
-fs.readFile(path.join(__dirname, "datas/catalog.json"), (err, data) => {
-    
-});
+cart = {
+    "Big Capybara": {
+    "name": "Big Capybara",
+    "price": 10,
+    "qty": 0
+    }
+}
+
+cart["BigCapybary"]["qty"] = 1;
+item["qty" = 1

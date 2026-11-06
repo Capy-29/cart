@@ -1,3 +1,41 @@
+*{
+    font-family: 'Standard Galactic Alphabet Hand', sans-serif;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: flex;
+    justify-content: right;
+    background-color: aquamarine;
+}
+
+body{
+    margin: 0px;
+    overflow-y: scroll;
+    background-color: #B9D9EB;
+}
+
+#cart{
+    width: 500px;
+    z-index: 1;
+    display: none;
+    justify-content: left;
+    background-color: white;
+    position: absolute;
+}
+
+#cart *{
+    font-size: 2rem;
+}
+
+.cart__ul__li__button{
+    height: 100%;
+}
+
 .h-center {
     margin: 0px;
     padding: 0px;
@@ -62,39 +100,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-header {
-    width: 100vw;
-    height: 100px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    display: flex;
-    justify-content: right;
-    background-color: aquamarine;
-}
 
-body{
-    margin: 0px;
-    overflow-y: scroll;
-    background-color: #B9D9EB;
-}
-
-*{
-    font-family: 'Standard Galactic Alphabet Hand', sans-serif;
-}
-
-#cart{
-    width: 500px;
-    z-index: 1;
-    display: none;
-    justify-content: left;
-    background-color: white;
-    position: absolute;
-}
-
-#cart *{
-    font-size: 2rem;
-}
 
 @media(max-width: 1100px) {
     #screen{
