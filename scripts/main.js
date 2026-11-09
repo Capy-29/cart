@@ -14,6 +14,7 @@ class Cart{
                 const name = catalog[id]["name"];
                 
                 const li = document.createElement("li");
+                li.setAttribute("class", "cart__ul__li");
 
                 const p = document.createElement("p");
                 p.textContent = `${name}: ${n}`;
@@ -93,7 +94,8 @@ const response = get("/data?name=catalog.json").then((value) => {
     catalog = value;
     const screen = document.getElementById("screen");
     for(const item of catalog){
-        screen.insertAdjacentHTML("beforeend",
+        const template = document.createElement("template");
+        template.insertAdjacentHTML("beforeend",
 `
 <div class = "item";>
     <div class="image_container">
@@ -101,8 +103,23 @@ const response = get("/data?name=catalog.json").then((value) => {
     </div>
     <h1>${item["name"]}</h1>
     <p>${item["price"]}</p>
-    <button onclick="cart.add(${item["index"]}); console.log(cart.content);">Add to cart</button>
 </div>
-`);
+`
+        );
+        const html = template.firstElementChild;
+
+        const buyButton = document.createElement("button");
+        buyButton.addEventListener("click", (e) =>{
+            cart.add(item["index"]);
+        })
+        buyButton.textContent = "Add to cart";
+
+        html.appendChild(buyButton);
+        screen.appendChild(html);
     }
+})
+
+const cartSwitch = document.getElementById("cartSwitch");
+cartSwitch.addEventListener("click", (e) => {
+    toogleCart();
 })

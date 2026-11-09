@@ -32,6 +32,10 @@ body{
     font-size: 2rem;
 }
 
+.cart__ul__li{
+    display: flex;
+}
+
 .cart__ul__li__button{
     height: 100%;
 }
