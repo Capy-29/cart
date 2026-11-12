@@ -17,10 +17,12 @@ class Cart{
                 li.setAttribute("class", "cart__ul__li");
 
                 const p = document.createElement("p");
+                p.setAttribute("class", "cart__ul__li__p")
                 p.textContent = `${name}: ${n}`;
                 li.appendChild(p);
 
                 const removeButton = document.createElement("button");
+                removeButton.textContent = "remove"
                 removeButton.setAttribute("class", "cart__ul__li__button");
                 removeButton.addEventListener("click", event => {
                     this.remove(id);
