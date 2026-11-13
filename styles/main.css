@@ -24,13 +24,17 @@ body{
     background-color: #B9D9EB;
 }
 
+#filter_search{
+    justify-self: center;
+    font-size: 1.5rem;
+}
+
 #cart{
     width: 650px;
-    z-index: 1;
-    display: none;
     justify-content: left;
+    justify-self: center;
     background-color: white;
-    position: absolute;
+    border-radius: 5px;
 }
 
 #cart *{
@@ -107,10 +111,10 @@ body{
     margin: 0px;
     padding: 2%;
     border: 0px;
-    gap: 2%;
-    height: auto;
+    gap: 20px;
     position: relative;
     display: grid;
+    justify-self: center;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
