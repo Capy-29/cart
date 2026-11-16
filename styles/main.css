@@ -26,7 +26,15 @@ body{
 
 #filter_search{
     justify-self: center;
+    position: absolute;
+    z-index: 1;
     font-size: 1.5rem;
+    background-color: white;
+    display: none;
+}
+
+.filter_search__field{
+    border: 3px solid black;
 }
 
 #cart{

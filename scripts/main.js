@@ -73,8 +73,8 @@ function filter(arr, category, value){
     return res;
 }
 
-function toogleCart(){
-    cartElement = document.getElementById("cart");
+function toogleFilder(){
+    cartElement = document.getElementById("filter_search");
     if(cartElement.style.display === "block"){
         cartElement.style.display = "none";
     }
@@ -91,11 +91,19 @@ async function get(url) {
     return await response.json();
 }
 
+const tag_map = {};
 var catalog;
 const response = get("/data?name=catalog.json").then((value) => {
     catalog = value;
     const screen = document.getElementById("screen");
     for(const item of catalog){
+        for(const tag of item["tags"]){
+            if(!tag_map[tag]){
+                tag_map[tag] = [];
+            }
+            tag_map[tag].push(item["index"]);
+        }
+
         const template = document.createElement("template");
         template.insertAdjacentHTML("beforeend",
 `
@@ -121,7 +129,12 @@ const response = get("/data?name=catalog.json").then((value) => {
     }
 })
 
-const cartSwitch = document.getElementById("cartSwitch");
+const cartSwitch = document.getElementById("filderSwitch");
 cartSwitch.addEventListener("click", (e) => {
-    toogleCart();
+    toogleFilder();
 })
+
+const filter_search__field = document.querySelector("filter_search__field");
+for(const tag of tag_map.keys()){
+    
+}
