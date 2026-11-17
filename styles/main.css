@@ -33,7 +33,7 @@ body{
     display: none;
 }
 
-.filter_search__field{
+#filter_search__field{
     border: 3px solid black;
 }
 

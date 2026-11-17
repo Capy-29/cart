@@ -127,6 +127,18 @@ const response = get("/data?name=catalog.json").then((value) => {
         html.appendChild(buyButton);
         screen.appendChild(html);
     }
+    const legend = document.getElementById("filter_search__field");
+    for(const tag of Object.keys(tag_map)){
+        label = document.createElement("label");
+        input = document.createElement("input");
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("value", tag);
+        label.textContent = tag;
+
+        label.appendChild(input);
+        legend.appendChild(label);
+    }
+
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
@@ -134,7 +146,3 @@ cartSwitch.addEventListener("click", (e) => {
     toogleFilder();
 })
 
-const filter_search__field = document.querySelector("filter_search__field");
-for(const tag of tag_map.keys()){
-    
-}
