@@ -1,6 +1,7 @@
 class Cart{
     constructor(){
         this.content = {};
+        this.totalPrice = 0;
     }
 
     update(){
@@ -32,7 +33,7 @@ class Cart{
                 cartList.appendChild(li);
             }
         }
-        document.getElementById("total").textContent = `total: ${this.totalPrice()}`;
+        document.getElementById("total").textContent = `total: ${this.totalPrice}`;
     }
 
     add(itemId){
@@ -40,6 +41,7 @@ class Cart{
             this.content[itemId] = 0;
         }
         this.content[itemId] += 1;
+        this.totalPrice += catalog[itemId]["price"]
 
         this.update();
     }
@@ -49,17 +51,9 @@ class Cart{
             this.content[itemId] = 0;
         }
         this.content[itemId] -= 1;
+        this.totalPrice -= catalog[itemId]["price"]
 
         this.update();
-    }
-
-    totalPrice(){
-        let total = 0;
-        for(const [id, n] of Object.entries(this.content)){
-            const price = catalog[id]["price"];
-            total += price * n;
-        }
-        return total;
     }
 }
 
@@ -82,7 +76,6 @@ function toogleFilder(){
         cartElement.style.display = "block";
     }
 }
-
 
 const cart = new Cart();
 
@@ -127,7 +120,7 @@ const response = get("/data?name=catalog.json").then((value) => {
         html.appendChild(buyButton);
         screen.appendChild(html);
     }
-    const legend = document.getElementById("filter_search__field");
+    const field = document.getElementById("filter_search__field");
     for(const tag of Object.keys(tag_map)){
         label = document.createElement("label");
         input = document.createElement("input");
@@ -135,10 +128,15 @@ const response = get("/data?name=catalog.json").then((value) => {
         input.setAttribute("value", tag);
         label.textContent = tag;
 
-        label.appendChild(input);
-        legend.appendChild(label);
+        label.prepend(input);
+        field.appendChild(label);
     }
+})
 
+const filderForm = document.getElementById("filter_search__form");
+console.log(filderForm);
+filderForm.addEventListener("submit", (event) => {
+    console.log("read");
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
