@@ -57,16 +57,6 @@ class Cart{
     }
 }
 
-function filter(arr, category, value){
-    const res = [];
-    for(const item of arr){
-        if(item[category] === value){
-            res.push(item)
-        }
-    }
-    return res;
-}
-
 function toogleFilder(){
     cartElement = document.getElementById("filter_search");
     if(cartElement.style.display === "block"){
@@ -86,10 +76,29 @@ async function get(url) {
 
 const tag_map = {};
 var catalog;
+const screen = document.getElementById("screen");
 const response = get("/data?name=catalog.json").then((value) => {
     catalog = value;
-    const screen = document.getElementById("screen");
-    for(const item of catalog){
+    updateScreen();
+    updateFilder();
+})
+
+function updateScreen(selector = false){
+    for(child of screen.children){
+        document.dele
+    }
+    let items;
+    if(selector){
+        items = [];
+        for(item_id of selector){
+            items.push(catalog[item_id]);
+        }
+    }
+    else{
+        items = catalog;
+    }
+
+    for(const item of items){
         for(const tag of item["tags"]){
             if(!tag_map[tag]){
                 tag_map[tag] = [];
@@ -120,6 +129,8 @@ const response = get("/data?name=catalog.json").then((value) => {
         html.appendChild(buyButton);
         screen.appendChild(html);
     }
+}
+function updateFilder(){
     const field = document.getElementById("filter_search__field");
     for(const tag of Object.keys(tag_map)){
         label = document.createElement("label");
@@ -131,12 +142,21 @@ const response = get("/data?name=catalog.json").then((value) => {
         label.prepend(input);
         field.appendChild(label);
     }
-})
+}
+
 
 const filderForm = document.getElementById("filter_search__form");
-console.log(filderForm);
+const filderField = document.getElementById("filter_search__field");
 filderForm.addEventListener("submit", (event) => {
-    console.log("read");
+    event.preventDefault();
+    const items = [];
+    for(const child of filderField.children){
+        const checkbox = child.firstChild;
+        if(checkbox.checked){
+            items.push(...tag_map[checkbox.value]);
+        }
+    }
+    updateScreen(items);
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
