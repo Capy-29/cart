@@ -79,19 +79,26 @@ var catalog;
 const screen = document.getElementById("screen");
 const response = get("/data?name=catalog.json").then((value) => {
     catalog = value;
+
+    for(const item of catalog){
+        for(const tag of item["tags"]){
+            if(!tag_map[tag]){
+                tag_map[tag] = [];
+            }
+            tag_map[tag].push(item["index"]);
+        }
+    }
     updateScreen();
     updateFilder();
 })
 
 function updateScreen(selector = false){
-    for(child of screen.children){
-        document.dele
-    }
+    screen.innerHTML="";
     let items;
     if(selector){
-        items = [];
+        items = new Set();
         for(item_id of selector){
-            items.push(catalog[item_id]);
+            items.add(catalog[item_id]);
         }
     }
     else{
@@ -99,13 +106,6 @@ function updateScreen(selector = false){
     }
 
     for(const item of items){
-        for(const tag of item["tags"]){
-            if(!tag_map[tag]){
-                tag_map[tag] = [];
-            }
-            tag_map[tag].push(item["index"]);
-        }
-
         const template = document.createElement("template");
         template.insertAdjacentHTML("beforeend",
 `
@@ -156,7 +156,12 @@ filderForm.addEventListener("submit", (event) => {
             items.push(...tag_map[checkbox.value]);
         }
     }
-    updateScreen(items);
+    if(items.length === 0){
+        updateScreen(false)
+    }
+    else{
+        updateScreen(items);
+    }
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
