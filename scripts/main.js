@@ -96,7 +96,7 @@ function updateScreen(selector = false){
     screen.innerHTML="";
     let items;
     if(selector){
-        items = new Set();
+        items = new Set();  
         for(item_id of selector){
             items.add(catalog[item_id]);
         }

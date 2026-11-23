@@ -4,6 +4,7 @@
         "price": 10,
         "image": "https://minecraft.wiki/images/Iron_Sword_JE2_BE2.png?62770",
         "index": 0,
+        "stock": 5,
         "tags":[
             "weapon",
             "close_combat"
@@ -14,6 +15,7 @@
         "price": 15,
         "image": "https://minecraft.wiki/images/Bow_JE2_BE1.png?c428a",
         "index": 1,
+        "stock": 4,
         "tags":[
             "weapon",
             "ranged_combat"
@@ -24,6 +26,7 @@
         "price": 9999,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhgLbMsmN8e5xdiuUkPylNLeMPrRy2UeVJo10RZ8PQLrggEpHUOih6ZMXPBFtUFPaUTum8jovHHd_GSqeGtZJWtxCqjTehPw-kgfgri_I&s=10",
         "index": 2,
+        "stock": 1,
         "tags":[
             "weapon",
             "close_combat",
@@ -36,6 +39,7 @@
         "price": 100,
         "image": "https://minecraft.wiki/images/Netherite_Hoe_JE2_BE2.png?d1cdd",
         "index": 3,
+        "stock": 5000,
         "tags":[
             "tool",
             "netherite"
@@ -46,6 +50,7 @@
         "price": 5,
         "image": "https://craftlands.host/_next/image?url=%2Fapi%2FdocsMedia%2Ffile%2FFireworkStarHero.webp%3Fprefix%3DdocsMedia&w=1920&q=70&dpl=10c42bcb196bfd6b88a2e8db5ada30c3a9b74ff3",
         "index": 4,
+        "stock": 0,
         "tags":[
             "ingredient"
         ]
@@ -55,6 +60,7 @@
         "price": 10,
         "image": "https://minecraft.wiki/images/thumb/Leather_Cap_JE4_BE2.png/160px-Leather_Cap_JE4_BE2.png?8e830",
         "index": 5,
+        "stock": 2,
         "tags":[
             "armor"
         ]
@@ -64,6 +70,7 @@
         "price": 2,
         "image": "https://minecraft.wiki/images/thumb/Sweet_Berries_JE1_BE1.png/150px-Sweet_Berries_JE1_BE1.png?d29d1",
         "index": 6,
+        "stock": 16,
         "tags":[
             "food"
         ]
@@ -73,6 +80,7 @@
         "price": 5,
         "image": "https://minecraft.wiki/images/Arrow_%28item%29_JE1_BE1.png?93ac1",
         "index": 7,
+        "stock": 45,
         "tags":[
             "weapon",
             "ranged_combat",
@@ -84,6 +92,7 @@
         "price": 50,
         "image": "https://minecraft.wiki/images/Turtle_Scute_JE1_BE1.png?99cc2",
         "index": 8,
+        "stock": 9,
         "tags":[
             "ingredient"
         ]
@@ -93,6 +102,7 @@
         "price": 15,
         "image": "https://minecraft.wiki/images/thumb/Map_Zoom_4.png/160px-Map_Zoom_4.png?df21f",
         "index": 9,
+        "stock": 0,
         "tags":[
             "tool"
         ]
@@ -102,6 +112,7 @@
         "price": 4,
         "image": "https://minecraft.wiki/images/Lime_Dye_JE3_BE3.png?b78e2",
         "index": 10,
+        "stock": 3,
         "tags":[
             "dye"
         ]
@@ -111,6 +122,7 @@
         "price": 4,
         "image": "https://minecraft.wiki/images/Orange_Dye_JE3_BE3.png?7f1e2",
         "index": 11,
+        "stock": 2,
         "tags":[
             "dye"
         ]
@@ -120,6 +132,7 @@
         "price": 4,
         "image": "https://minecraft.wiki/images/Gray_Dye_JE3_BE3.png?7e2cb",
         "index": 12,
+        "stock": 6,
         "tags":[
             "dye"
         ]
@@ -129,6 +142,7 @@
         "price": 10,
         "image": "https://minecraft.wiki/images/Phantom_Membrane_JE2_BE2.png?b9c3a",
         "index": 13,
+        "stock": 54,
         "tags":[
             "ingredient"
         ]
@@ -138,6 +152,7 @@
         "price": 5,
         "image": "https://minecraft.wiki/images/thumb/Shield_JE2_BE1.png/160px-Shield_JE2_BE1.png?4837d",
         "index": 14,
+        "stock": 6,
         "tags":[
             "armor",
             "weapon"
@@ -148,6 +163,7 @@
         "price": 10,
         "image": "https://minecraft.wiki/images/Bone_JE3_BE2.png?b405e",
         "index": 15,
+        "stock": 2,
         "tags":[
             "ingredient"
         ]
@@ -157,6 +173,7 @@
         "price": 5,
         "image": "https://minecraft.wiki/images/Name_Tag_JE3_BE2.png?cbdc1",
         "index": 16,
+        "stock": 34,
         "tags":[
             "tool"
         ]
@@ -166,6 +183,7 @@
         "price": 50,
         "image": "https://minecraft.wiki/images/Trident_%28item%29_JE2_BE1.png?6f7d2",
         "index": 17,
+        "stock": 23,
         "tags":[
             "weapon",
             "close_combat",
@@ -177,6 +195,7 @@
         "price": 5,
         "image": "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png?2128f",
         "index": 18,
+        "stock": 23,
         "tags":[
             "weapon"
         ]
@@ -186,6 +205,7 @@
         "price": 5,
         "image": "https://minecraft.wiki/images/Wooden_Pickaxe_JE3_BE3.png?fa797",
         "index": 19,
+        "stock": 234,
         "tags":[
             "tool",
             "wood"
