@@ -1,6 +1,10 @@
 class Cart{
     constructor(){
         this.content = {};
+        for(let i = 0; i < 20; i++){
+            this.content[i] = 0;
+        }
+
         this.totalPrice = 0;
     }
 
@@ -37,23 +41,17 @@ class Cart{
     }
 
     add(itemId){
-        if(!this.content[itemId]){
-            this.content[itemId] = 0;
-        }
         this.content[itemId] += 1;
         this.totalPrice += catalog[itemId]["price"]
-
         this.update();
+        updateScreen(selector);
     }
 
     remove(itemId){
-        if(!this.content[itemId]){
-            this.content[itemId] = 0;
-        }
         this.content[itemId] -= 1;
         this.totalPrice -= catalog[itemId]["price"]
-
         this.update();
+        updateScreen(selector);
     }
 }
 
@@ -92,6 +90,7 @@ const response = get("/data?name=catalog.json").then((value) => {
     updateFilder();
 })
 
+var cards;
 function updateScreen(selector = false){
     screen.innerHTML="";
     let items;
@@ -105,6 +104,7 @@ function updateScreen(selector = false){
         items = catalog;
     }
 
+    cards = {};
     for(const item of items){
         const template = document.createElement("template");
         template.insertAdjacentHTML("beforeend",
@@ -114,20 +114,30 @@ function updateScreen(selector = false){
         <img src="${item["image"]}" alt="Item">
     </div>
     <h1>${item["name"]}</h1>
-    <p>${item["price"]}</p>
+    <p>price: ${item["price"]}</p>
+    <p>in stock: ${item["stock"]}</p>
 </div>
 `
         );
         const html = template.firstElementChild;
 
-        const buyButton = document.createElement("button");
-        buyButton.addEventListener("click", (e) =>{
-            cart.add(item["index"]);
-        })
-        buyButton.textContent = "Add to cart";
+        if(cart.content[item["index"]] < item["stock"]){
+            const buyButton = document.createElement("button");
+            buyButton.addEventListener("click", (e) =>{
+                cart.add(item["index"]);
+            })
+            buyButton.textContent = "Add to cart";
+            html.appendChild(buyButton);
+        }
+        else{
+            const error = document.createElement("p");
+            error.setAttribute("class", "error");
+            error.textContent = "out of stock!";
+            html.appendChild(error);
+        }
 
-        html.appendChild(buyButton);
         screen.appendChild(html);
+        cards[item["index"]] = html;
     }
 }
 function updateFilder(){
@@ -147,6 +157,7 @@ function updateFilder(){
 
 const filderForm = document.getElementById("filter_search__form");
 const filderField = document.getElementById("filter_search__field");
+var selector;
 filderForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const items = [];
@@ -162,10 +173,10 @@ filderForm.addEventListener("submit", (event) => {
     else{
         updateScreen(items);
     }
+    selector = items;
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
 cartSwitch.addEventListener("click", (e) => {
     toogleFilder();
 })
-
