@@ -170,12 +170,13 @@ filderForm.addEventListener("submit", (event) => {
         }
     }
     if(items.length === 0){
-        updateScreen(false)
+        updateScreen(false);
+        selector = false;
     }
     else{
         updateScreen(items);
+        selector = items;
     }
-    selector = items;
 })
 
 const cartSwitch = document.getElementById("filderSwitch");
