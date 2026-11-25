@@ -6,6 +6,7 @@ class Cart{
         }
 
         this.totalPrice = 0;
+        this.discount = 1;
     }
 
     update(){
@@ -37,7 +38,8 @@ class Cart{
                 cartList.appendChild(li);
             }
         }
-        document.getElementById("total").textContent = `total: ${this.totalPrice}`;
+        const final_price = Math.round(this.totalPrice * this.discount * 100) / 100;
+        document.getElementById("total").textContent = `total: ${final_price}`;
     }
 
     add(itemId){
@@ -75,7 +77,7 @@ async function get(url) {
 const tag_map = {};
 var catalog;
 const screen = document.getElementById("screen");
-const response = get("/data?name=catalog.json").then((value) => {
+const response = get("catalog.json").then((value) => {
     catalog = value;
 
     for(const item of catalog){
@@ -179,4 +181,23 @@ filderForm.addEventListener("submit", (event) => {
 const cartSwitch = document.getElementById("filderSwitch");
 cartSwitch.addEventListener("click", (e) => {
     toogleFilder();
+})
+
+discount_codes = {
+    "lorem": 0.9,
+    "ipsum": 0.7,
+    "dolor": 0.5
+}
+document.getElementById("discount_code_form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const code = document.getElementById("discount_code_input").value;
+    
+    if(Object.keys(discount_codes).includes(code)){
+        document.getElementById("discount_code_error").style.display = "none";
+        cart.discount = discount_codes[code];
+        cart.update();
+    }
+    else{
+        document.getElementById("discount_code_error").style.display = "block";
+    }
 })

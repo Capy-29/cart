@@ -1,11 +1,11 @@
 <html>
     <head>
-        <link rel="stylesheet", href="/style?name=main.css">
+        <link rel="stylesheet", href="main.css">
         <link href="https://fonts.cdnfonts.com/css/standard-galactic-alphabet-hand" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h2>BobAI's Wares</h2>
+            <h2>Some Wares</h2>
             <div id="header__cart_button"><button id=filderSwitch>Filder</button></div>
         </header>
         <img id="rick" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif">
@@ -21,7 +21,15 @@
         <div id = "cart">
             <ul id = "cart-list"></ul>
             <p id = "total">total: 0</p>
+            <form id="discount_code_form">
+                <legend>Discount Code</legend>
+                <fieldset>
+                    <input type="text" id="discount_code_input">
+                    <p class = "error",  id = discount_code_error>Invalid Code</p>
+                </fieldset>
+                <button type="submit">Apply</button>
+            </form>
         </div>
-        <script src="/script?name=main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
